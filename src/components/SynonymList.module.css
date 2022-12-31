@@ -1,0 +1,15 @@
+.synonym-list {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.synonym-list ul {
+    padding: 2.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  

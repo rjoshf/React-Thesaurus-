@@ -1,0 +1,108 @@
+.input {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #a892ee;
+  }
+  
+  .input label {
+    font-weight: bold;
+    display: block;
+    margin: 0.5rem 1rem;
+  }
+  
+  .input input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 1rem;
+    width: 81%;
+  }
+  
+  .input input:focus {
+    outline: none;
+    border-color: #40005d;
+  }
+
+  .input .submit-button {
+    display: inline;
+    margin: 1rem;
+    margin-left: 0;
+  }
+
+  @media (min-width: 2200px) {
+    .input input {
+      width: 86%;
+    }
+  } 
+
+  @media (max-width: 1905px) {
+    .input input {
+      width: 80%;
+    }
+  } 
+
+  
+  @media (max-width: 1600px) {
+    .input input {
+      width: 78%;
+    }
+  } 
+
+  @media (max-width: 1400px) {
+    .input input {
+      width: 76%;
+    }
+  } 
+
+  @media (max-width: 1350px) {
+    .input input {
+      width: 74%;
+    }
+  } 
+
+  @media (max-width: 925px) {
+    .input input {
+      width: 72%;
+    }
+  } 
+
+  @media (max-width: 900px) {
+    .input input {
+      width: 68%;
+    }
+  } 
+
+  @media (max-width: 850px) {
+    .input input {
+      width: 66%;
+    }
+  } 
+
+  @media (max-width: 800px) {
+    .input input {
+      width: 64%;
+    }
+  } 
+
+  @media (max-width: 750px) {
+    .input input {
+      width: 62%;
+    }
+  } 
+
+  @media (max-width: 700px) {
+    .input {
+      padding: 1rem;
+    }
+    .input input {
+      width: 88%;
+    }
+    .input .submit-button {
+      margin-left: 1rem;
+    }
+  } 
+
+ 
+
+ 

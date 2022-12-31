@@ -1,0 +1,50 @@
+.synonym {
+    margin: 1rem;
+    background-color: #40005d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    width: 25rem;
+  }
+  
+  .synonym h2 {
+    font-size: 1.6rem;
+    color: #fff;
+  }
+
+  @media (max-width: 1850px) {
+    .synonym {
+      width: 24rem;
+    }
+  } 
+
+  @media (max-width: 1750px) {
+    .synonym {
+      width: 23rem;
+    }
+  } 
+
+  @media (max-width: 1450px) {
+    .synonym {
+      width: 22rem;
+    }
+  } 
+
+  @media (max-width: 1350px) {
+    .synonym {
+      width: 20rem;
+    }
+  } 
+
+  @media (max-width: 1250px) {
+    .synonym {
+      width: 18rem;
+    }
+  } 
+
+  @media (max-width: 950px) {
+    .synonym {
+      width: 25rem;
+    }
+  } 
