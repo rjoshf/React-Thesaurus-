@@ -18,7 +18,7 @@ const SynonymFetcher = () => {
 	const [ synonyms, setSynonyms ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(false);
 	const [ inputWord, setInputWord ] = useState('');
-	const [ error, setError ] = useState();
+	const [ error, setError ] = useState(null);
 	const [ firstInput, setFirstInput ] = useState(true);
 
 	const searchWordHandler = useCallback(
@@ -43,26 +43,37 @@ const SynonymFetcher = () => {
 				return;
 			}
 
+			setError(null);
 			setIsLoading(true);
 			setInputWord(enteredWord);
 
-			const response = await fetch(`https://api.api-ninjas.com/v1/thesaurus?word=${enteredWord}`, options);
-			const data = await response.json();
-			const synonymsArray = data.synonyms.map((element) => {
-				const capLetter = element.charAt(0).toUpperCase() + element.slice(1);
-				return capLetter.replaceAll('_', ' ');
-			});
-
-			const loadedSynonyms = [];
-
-			for (let i = 0; i < synonymsArray.length; i++) {
-				if (synonymsArray[i].toLowerCase() !== enteredWord.toLowerCase()) {
-					loadedSynonyms.push(synonymsArray[i]);
+			try {
+				const response = await fetch(`https://api.api-ninjas.com/v1/thesaurus?word=${enteredWord}`, options);
+				if (!response.ok) {
+					throw new Error('Perhaps the API is down! Please try again later.');
 				}
-			}
+				const data = await response.json();
+				const synonymsArray = data.synonyms.map((element) => {
+					const capLetter = element.charAt(0).toUpperCase() + element.slice(1);
+					return capLetter.replaceAll('_', ' ');
+				});
 
-			setSynonyms(loadedSynonyms);
-			setIsLoading(false);
+				const loadedSynonyms = [];
+
+				for (let i = 0; i < synonymsArray.length; i++) {
+					if (synonymsArray[i].toLowerCase() !== enteredWord.toLowerCase()) {
+						loadedSynonyms.push(synonymsArray[i]);
+					}
+				}
+
+				setSynonyms(loadedSynonyms);
+				setIsLoading(false);
+			} catch (error) {
+				setError({
+					title: 'Something went wrong!',
+					message: error.message
+				});
+			}
 		},
 		[ inputWord ]
 	);

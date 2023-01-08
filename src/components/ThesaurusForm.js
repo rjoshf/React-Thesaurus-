@@ -13,8 +13,6 @@ const ThesaurusForm = (props) => {
 
 		const enteredWord = wordInputRef.current.value.replace(/\s+/g, '');
 
-		console.log(enteredWord);
-
 		props.onSearchWord(enteredWord);
 	};
 
